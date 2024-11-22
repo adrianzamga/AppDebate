@@ -1,0 +1,254 @@
+body {
+    background-color: #0A5DA8;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(./images/speakers.png); 
+    background-size: 109% 100%;
+    background-position: center center; /* Centra la imagen en la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen para que no se desplace */
+    margin: 0; /* Elimina márgenes predeterminados */
+    height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+    
+} 
+
+main {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1; /* Hace que este contenedor ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Asegura que siempre cubra el viewport */
+  box-sizing: border-box;
+}
+
+section {
+  flex: 1; /* Empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+#timerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Asegura que los hijos tengan la misma altura */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+#timerScreen {
+  flex: 1;
+  margin: 0 10px; /* Espacio lateral */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+#timerScreen button {
+  margin: 10px auto; /* Ajusta el margen para centrar */
+  padding: 10px 20px;
+  font-size: 1em;
+  width: 120px; /* Ajusta el ancho según lo necesario */
+}
+
+.timer {
+  font-size: 4em; /* Tamaño más grande para el temporizador */
+  font-weight: bold;
+  margin-top: 20px;
+  color: #fff; /* Cambiado a blanco para contraste */
+}
+
+.committee-label {
+  font-size: 2em; /* Agranda el tamaño de fuente */
+}
+
+#countryTableContainer {
+  width: 40%; /* Amplía el ancho del contenedor de la tabla */
+  margin: auto;
+}
+
+#countryTable {
+  width: 100%;
+  font-size: 1.2em; /* Agranda el texto en la tabla */
+  table-layout: fixed; /* Tablas con ancho fijo */
+}
+
+#speakersContainer {
+  width: 30%; /* Ajusta según sea necesario */
+  height: 300px; /* Ajusta según sea necesario */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+  margin-top: 20px;
+}
+
+#speakersContainer .title {
+    position: sticky; /* Se fija dentro de su contenedor */
+    top: 0; /* Se queda en la parte superior del contenedor */
+    z-index: 10; /* Asegúrate de que esté encima de otros elementos */
+    background-color: #212529; /* Fondo igual al de la tabla */
+    padding: 10px; /* Ajusta el padding según sea necesario */
+    border-bottom: 2px solid #212529; /* Añade un borde para mayor contraste */
+  }
+
+.title {
+  position: sticky; /* Permite que el título quede fijo */
+  top: 0; /* Se mantiene en la parte superior */
+  z-index: 1; /* Asegura que esté encima del contenido */
+}
+
+#nextSpeakersContainer {
+  flex: 1; /* Permite que ambos contenedores ocupen el mismo espacio */
+  margin: 0 10px; /* Espacio entre los contenedores */
+  display: flex;
+  flex-direction: column;
+}
+
+.speakers-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  background-color: transparent;
+  padding: 15px; /* Más espaciado interno para el título */
+  font-size: 2em; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.content {
+  overflow-y: auto; /* Desplazamiento vertical */
+  flex-grow: 1; /* Hace que ocupe el espacio restante */
+  padding: 20px; /* Opcional: ajusta según el diseño */
+  background-color: #ffffff; /* Fondo para el contenido */
+}
+
+#speakersTableBody,
+#nextSpeakersTableBody {
+  flex-grow: 1; /* Permite que las tablas ocupen el espacio restante */
+  overflow-y: auto; /* Añade scroll si es necesario */
+  background-color: #212529; /* Fondo oscuro para las filas */
+  color: #ffffff; /* Texto blanco para mayor contraste */
+  font-size: 1.2em; /* Aumenta el tamaño de fuente en las tablas */
+}
+
+.swal2-popup {
+  width: 400px; /* Ajusta el tamaño de las ventanas emergentes */
+  padding: 20px; /* Más espacio interno */
+}
+
+.swal2-title {
+  font-size: 1.5em; /* Agranda el título */
+}
+
+.swal2-content {
+  font-size: 1.2em; /* Agranda el contenido */
+}
+
+.swal2-confirm,
+.swal2-cancel {
+  padding: 10px 20px; /* Ajusta el tamaño del botón */
+}
+
+/* Ajustes adicionales para botones dentro de #timerScreen */
+#timerScreen button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.input-container {
+  background-color: #34276e; /* Color de fondo suave */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 250px; /* Ancho máximo */
+  margin: 20px auto; /* Centrar contenedor */
+  margin-bottom: 10px; /* Más margen inferior si es necesario */
+}
+
+/* Estilo del input */
+input#newGlobalTime {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding: 8px 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+  color: #f4f0f0;
+  width: 80%; /* Ajusta el ancho del input al contenedor */
+}
+
+/* Efecto al pasar el ratón */
+input#newGlobalTime:hover {
+  border-bottom: 1px solid #666;
+}
+
+input#newGlobalTime:focus {
+  border-bottom: 2px solid #28a745; /* Cambia el color al verde (éxito) */
+}
+
+input#newGlobalTime::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Más claridad para el texto placeholder */
+}
+
+.spacing {
+  margin: 10px 0; /* Espaciado uniforme vertical */
+}
+
+.spoken {
+  text-decoration: line-through;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+footer p {
+  font-size: 15px; /* Tamaño de texto */
+  margin: 0; /* Elimina márgenes adicionales */
+}
+
+footer .fa-envelope {
+  font-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+footer img {
+  max-width: 154px; /*Tamaño de logo */
+  margin-bottom: 5px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px; /* Controla el espacio interior */
+}
+
+footer .row {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.highlight {
+    color: rgb(6, 6, 6); 
+}

@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(./images/suns.webp);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; /* Elimina márgenes */
+}
+
+main {
+    flex: 1;
+    padding-top: 70px; /* Espacio para la barra de navegación fija */
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 5px 0; /* Reduce el padding para hacerlo más pequeño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 15px; /* Ajusta según lo pequeño que desees el texto */
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+footer .fa-envelope {
+    font-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+footer img {
+    max-width: 154px; /* Ajusta el tamaño del logo según lo que necesites */
+    margin-bottom: 5px;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px; /* Controla el espacio interior */
+}
+
+footer .row {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
