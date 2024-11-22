@@ -253,7 +253,7 @@ document.getElementById("setupForm").appendChild(committeeText);
         currentCommitteeIndex = 0;
         updateCommitteeLabel();
         updateNextCountries();
-        startTimer(globalTime * 60); // Start timer with specified time
+        startTimer(globalTime * 60); // Iniciar timer con tiempo especificado
     } else {
         Swal.fire({
             title: 'Error',
@@ -322,16 +322,16 @@ function startTimer(seconds) {
 function handleTimeUp() {
     const currentCountry = committees[currentCommitteeIndex].country;
 
-    // Add the current country to the spoken countries table and set it as spoken
-    addSpokenCountryRow(currentCountry, countryCounter++); // Adds to the spoken countries table
-    spokenCountries.add(currentCountry); // Marks the country as spoken
+    // Añade el país actual a la tabla de países hablados y configúralo como hablado
+    addSpokenCountryRow(currentCountry, countryCounter++); // Agregar a tabla de países que hablaron
+    spokenCountries.add(currentCountry); // Marca el país como hablado
 
     Swal.fire({
         title: 'Finished time',
         text: `Time is up for ${currentCountry}.`,
         icon: 'info'
     }).then(() => {
-        // Advance to the next country if there are more in the list
+        // Avanzar a siguiente país si hay más
         if (currentCommitteeIndex < committees.length - 1) {
             currentCommitteeIndex++;
             updateCommitteeLabel();
@@ -387,7 +387,7 @@ function nextCommittee() {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            // Detenemos el temporizador actual
+            // Se detiene el temporizador actual
             clearInterval(timerInterval);
 
             const currentCountry = committees[currentCommitteeIndex].country;
